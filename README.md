@@ -63,7 +63,7 @@ streamlit run app.py
 ![](screenshots/img1.png)
 Positive Review
 
-![](screenshots/img1.png)
+![](screenshots/img2.png)
 Negative Review
 ---
 
