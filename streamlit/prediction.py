@@ -36,7 +36,7 @@ def predict(review):
 
     global trained_model
     if trained_model is None:
-        model_path = hf_hub_download(repo_id="itsmoksh/sentiment-bert-model", filename="sentiment_model.pth")
+        model_path = hf_hub_download(repo_id="itsmoksh/sentiment-bert-model", filename="sentiment_model.pth",map_location=torch.device('cpu'))
         trained_model= SentimentClassifier()
         trained_model.load_state_dict(torch.load(model_path))
         trained_model.eval()
