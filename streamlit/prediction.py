@@ -12,7 +12,7 @@ class SentimentClassifier(nn.Module):
         for param in self.bert.parameters():
             param.requires_grad = False  #Freezing parameters of bert model
 
-        self.classifier = nn.Sequential(   #Implementing a seperate fnn classifier
+        self.classifier = nn.Sequential(   #Implementing a separate fnn classifier
             nn.Linear(self.bert.config.hidden_size,256), # Bert produces embeddings of size hidden_size
             nn.ReLU(),
             nn.Dropout(0.3),
@@ -22,7 +22,7 @@ class SentimentClassifier(nn.Module):
 
     def forward(self,input_ids,attention_mask):
         bert_output = self.bert(input_ids = input_ids,attention_mask = attention_mask) #Passing input id and attention mask to bert model
-        sentence_embedding = bert_output.last_hidden_state[:,0,:] # Accesing CLS (semantic meaning of entire sentence)
+        sentence_embedding = bert_output.last_hidden_state[:,0,:] # Accessing CLS (semantic meaning of entire sentence)
         return self.classifier(sentence_embedding) #Passing CLS to classifier
 
 def tokenize(review):

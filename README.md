@@ -3,7 +3,8 @@
 ---
 ## Sentiment Analysis
 This is a **Sentiment Analysis Web App** built using **Streamlit** and **Hugging Face Transformers**.  
-The model is based on `bert-base-uncased` and classifies reviews into **Positive** or **Negative** sentiment.
+The model is based on `bert-base-uncased` and classifies reviews into **Positive** or **Negative** sentiment, along with the **probability of belonging to that class**.
+
 
 ---
 ## Model Details 
@@ -56,6 +57,14 @@ pip install -r requirements.txt
 ``` bash
 streamlit run app.py
 ```
+---
+
+## Screenshots
+![](screenshots/img1.png)
+Positive Review
+
+![](screenshots/img1.png)
+Negative Review
 ---
 
 ## Live App
